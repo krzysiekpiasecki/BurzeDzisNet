@@ -1,0 +1,18 @@
+<?php
+
+require_once 'vendor/autoload.php';
+
+spl_autoload_register(
+    function ($className) {
+        if (class_exists($className) === true) {
+            return;
+        }
+        $filePath = sprintf('src%s%s.php',
+            DIRECTORY_SEPARATOR,
+            str_replace('\\', DIRECTORY_SEPARATOR, $className)
+        );
+        if (is_readable($filePath) === true) {
+            require_once $filePath;
+        }
+    }
+);

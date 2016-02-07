@@ -1,0 +1,26 @@
+{
+  "name": "krzysiekpiasecki/burzedzisnet",
+  "description": "burze.dzis.net api client",
+  "keywords": ["storm", "weather", "alert", "api", "soap", "web service"],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Krzysztof Piasecki",
+      "email": "krzysiekpiasecki@gmail.com"
+    }
+  ],
+  "require": {
+      "php": ">=7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.*",
+    "phpunit/phpunit-story": "*",
+    "phploc/phploc": "*",
+    "fabpot/php-cs-fixer": "*",
+    "krzysiekpiasecki/diagnostics": "*"
+  },
+  "autoload": {
+    "psr-4": {"KrzysiekPiasecki\\": "src/KrzysiekPiasecki"}
+  }
+}

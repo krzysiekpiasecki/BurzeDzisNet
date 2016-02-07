@@ -1,0 +1,29 @@
+checks:
+    php:
+        fix_php_opening_tag: true
+        remove_php_closing_tag: true
+        one_class_per_file: true
+        side_effects_or_types: false
+        no_mixed_inline_html: true
+        require_braces_around_control_structures: true
+        php5_style_constructor: false
+        no_global_keyword: true
+        avoid_usage_of_logical_operators: true
+        psr2_class_declaration: true
+        no_underscore_prefix_in_properties: true
+        no_underscore_prefix_in_methods: true
+        blank_line_after_namespace_declaration: true
+        single_namespace_per_use: true
+        avoid_superglobals: true
+        security_vulnerabilities: true
+        no_exit: true
+        code_rating: true
+        duplication: true
+
+coding_style:
+    php:
+
+tools:
+    external_code_coverage: false
+    external_code_coverage:
+        timeout: 600    # Timeout in seconds.
