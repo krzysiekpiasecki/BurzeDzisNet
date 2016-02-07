@@ -7,7 +7,7 @@
 
 declare (strict_types = 1);
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
 
@@ -19,7 +19,7 @@ use PHPUnit_Framework_TestCase;
 class WeatherAlertTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::__construct
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::__construct
      */
     public function test__construct()
     {
@@ -34,7 +34,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::withAlert
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
      */
     public function testWithAlert()
     {
@@ -47,7 +47,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::withAlert
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
      * @expectedException \LogicException
      * @expectedExceptionMessage Alert storm exists
      */
@@ -59,7 +59,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::getAlert
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
      */
     public function testGetAlert()
     {
@@ -69,7 +69,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::getAlert
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
      * @expectedException \OutOfBoundsException
      * @expectedExceptionMessage There is no such an alert like 'Storm'
      */
@@ -81,7 +81,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::getIterator
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::getIterator
      */
     public function testGetIterator()
     {
@@ -98,7 +98,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::toArray
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::toArray
      */
     public function testToArray()
     {
@@ -114,7 +114,7 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\WeatherAlert::hasAlert
+     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::hasAlert
      */
     public function testHasAlert()
     {

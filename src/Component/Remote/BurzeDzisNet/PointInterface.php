@@ -9,7 +9,7 @@ declare (
     strict_types = 1
 );
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 /**
  * Point represents the coordinates (DMS) for the specified locality according to the list of village

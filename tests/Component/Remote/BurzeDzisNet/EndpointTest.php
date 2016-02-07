@@ -7,7 +7,7 @@
 
 declare (strict_types = 1);
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
 
@@ -19,7 +19,7 @@ use PHPUnit_Framework_TestCase;
 class EndpointTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\apiKey::apikey
+     * @covers Component\Remote\BurzeDzisNet\apiKey::apikey
      */
     public function testapiKey()
     {
@@ -28,7 +28,7 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Endpoint::wsdl
+     * @covers Component\Remote\BurzeDzisNet\Endpoint::wsdl
      */
     public function testWsdl()
     {
@@ -37,7 +37,7 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Endpoint::options
+     * @covers Component\Remote\BurzeDzisNet\Endpoint::options
      */
     public function testOptions()
     {
@@ -48,7 +48,7 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Endpoint::client
+     * @covers Component\Remote\BurzeDzisNet\Endpoint::client
      */
     public function testClient()
     {
@@ -60,13 +60,13 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Endpoint::client
+     * @covers Component\Remote\BurzeDzisNet\Endpoint::client
      *
      * @expectedException \SoapFault
      */
     public function testClientInvalidWSDL()
     {
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['wsdl', 'options'])
             ->getMock();
@@ -76,7 +76,7 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Endpoint::__construct
+     * @covers Component\Remote\BurzeDzisNet\Endpoint::__construct
      */
     public function test__construct()
     {

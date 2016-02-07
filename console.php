@@ -1,6 +1,6 @@
 <?php
 
-use KrzysiekPiasecki\BurzeDzisNet\CLI\BurzeDzisNetApplication;
+use Component\Remote\BurzeDzisNet\CLI\BurzeDzisNetApplication;
 
 require_once 'autoload.php.dist';
 

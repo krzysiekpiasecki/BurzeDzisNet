@@ -7,7 +7,7 @@
 
 declare (strict_types = 1);
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
 
@@ -19,7 +19,7 @@ use PHPUnit_Framework_TestCase;
 class PointTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Point::x
+     * @covers Component\Remote\BurzeDzisNet\Point::x
      */
     public function testX()
     {
@@ -28,7 +28,7 @@ class PointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Point::y
+     * @covers Component\Remote\BurzeDzisNet\Point::y
      */
     public function testY()
     {
@@ -37,7 +37,7 @@ class PointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Point::__construct
+     * @covers Component\Remote\BurzeDzisNet\Point::__construct
      */
     public function test__construct()
     {
@@ -47,7 +47,7 @@ class PointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Point::equals
+     * @covers Component\Remote\BurzeDzisNet\Point::equals
      */
     public function testEquals()
     {

@@ -9,7 +9,7 @@ declare (
     strict_types = 1
 );
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 /**
  * WeatherAlertInterface represents set of alerts

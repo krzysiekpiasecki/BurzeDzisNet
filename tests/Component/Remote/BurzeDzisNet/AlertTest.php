@@ -7,7 +7,7 @@
 
 declare (strict_types = 1);
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
 
@@ -19,7 +19,7 @@ use PHPUnit_Framework_TestCase;
 class AlertTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Alert::startDate
+     * @covers Component\Remote\BurzeDzisNet\Alert::startDate
      */
     public function testStartDate()
     {
@@ -28,7 +28,7 @@ class AlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Alert::endDate
+     * @covers Component\Remote\BurzeDzisNet\Alert::endDate
      */
     public function testEndDate()
     {
@@ -37,7 +37,7 @@ class AlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Alert::level
+     * @covers Component\Remote\BurzeDzisNet\Alert::level
      */
     public function testLevel()
     {
@@ -46,7 +46,7 @@ class AlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Alert::__construct
+     * @covers Component\Remote\BurzeDzisNet\Alert::__construct
      */
     public function test__construct()
     {

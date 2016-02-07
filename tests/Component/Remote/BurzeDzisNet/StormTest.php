@@ -7,7 +7,7 @@
 
 declare (strict_types = 1);
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
 
@@ -19,7 +19,7 @@ use PHPUnit_Framework_TestCase;
 class StormTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Storm::lightnings
+     * @covers Component\Remote\BurzeDzisNet\Storm::lightnings
      */
     public function testLightnings()
     {
@@ -28,7 +28,7 @@ class StormTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Storm::direction
+     * @covers Component\Remote\BurzeDzisNet\Storm::direction
      */
     public function testDirection()
     {
@@ -37,7 +37,7 @@ class StormTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Storm::distance
+     * @covers Component\Remote\BurzeDzisNet\Storm::distance
      */
     public function testDistance()
     {
@@ -46,7 +46,7 @@ class StormTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Storm::timePeriod
+     * @covers Component\Remote\BurzeDzisNet\Storm::timePeriod
      */
     public function testPeriod()
     {
@@ -55,7 +55,7 @@ class StormTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Storm::getRadius
+     * @covers Component\Remote\BurzeDzisNet\Storm::getRadius
      */
     public function testRadius()
     {
@@ -64,7 +64,7 @@ class StormTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\Storm::__construct
+     * @covers Component\Remote\BurzeDzisNet\Storm::__construct
      */
     public function test__construct()
     {

@@ -7,7 +7,7 @@
 
 declare (strict_types = 1);
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 use PHPUnit_Framework_TestCase;
 use SoapClient;
@@ -21,12 +21,12 @@ use stdClass;
 class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\BurzeDzisNet::__construct
+     * @covers Component\Remote\BurzeDzisNet\BurzeDzisNet::__construct
      */
     public function test__construct()
     {
         $client = $this->getMockBuilder('\SoapClient')->disableOriginalConstructor()->getMock();
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['client', 'apiKey'])
             ->getMock();
@@ -36,7 +36,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\BurzeDzisNet::verifyApiKey
+     * @covers Component\Remote\BurzeDzisNet\BurzeDzisNet::verifyApiKey
      */
     public function testVerifyApiKey()
     {
@@ -49,7 +49,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ['f892dbc042f3', false],
         ];
         $client->method('KeyApi')->will($this->returnValueMap($map));
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['client', 'apiKey'])
             ->getMock();
@@ -61,7 +61,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\BurzeDzisNet::locate
+     * @covers Component\Remote\BurzeDzisNet\BurzeDzisNet::locate
      */
     public function testLocate()
     {
@@ -74,20 +74,20 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->method('miejscowosc')->willReturn($remoteLocation);
         $client->expects($this->once())->method('miejscowosc')->with('Wrocław', '4d36bcb5c40');
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['client', 'apiKey'])
             ->getMock();
         $endpoint->method('client')->willReturn($client);
         $endpoint->method('apiKey')->willReturn('4d36bcb5c40');
         $coordinates = (new BurzeDzisNet($endpoint))->locate('Wrocław');
-        $this->assertInstanceOf("KrzysiekPiasecki\BurzeDzisNet\Point", $coordinates);
+        $this->assertInstanceOf("Component\Remote\BurzeDzisNet\Point", $coordinates);
         $this->assertSame(25.17, $coordinates->x());
         $this->assertSame(54.41, $coordinates->y());
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\BurzeDzisNet::getStorm
+     * @covers Component\Remote\BurzeDzisNet\BurzeDzisNet::getStorm
      */
     public function testGetStormReport()
     {
@@ -97,7 +97,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->method('szukaj_burzy')->willReturn($this->getStormTO());
         $client->expects($this->once())->method('szukaj_burzy')->with(54.41, 25.17, 50, '4d36bcb5c40');
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['client', 'apiKey'])
             ->getMock();
@@ -112,7 +112,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers KrzysiekPiasecki\BurzeDzisNet\BurzeDzisNet::getWeatherAlert
+     * @covers Component\Remote\BurzeDzisNet\BurzeDzisNet::getWeatherAlert
      */
     public function testGetWeatherAlert()
     {
@@ -122,7 +122,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $client->method('ostrzezenia_pogodowe')->willReturn($this->getAlertTO());
         $client->expects($this->once())->method('ostrzezenia_pogodowe')->with(54.41, 25.17, '4d36bcb5c40');
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['client', 'apiKey'])
             ->getMock();
@@ -269,7 +269,7 @@ class BurzeDzisNetTest extends PHPUnit_Framework_TestCase
      */
     protected function getEndpoint(SoapClient $client): Endpoint
     {
-        $endpoint = $this->getMockBuilder("KrzysiekPiasecki\BurzeDzisNet\Endpoint")
+        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
             ->disableOriginalConstructor()
             ->setMethods(['client', 'apiKey'])
             ->getMock();

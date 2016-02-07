@@ -9,7 +9,7 @@ declare (
     strict_types = 1
 );
 
-namespace KrzysiekPiasecki\BurzeDzisNet;
+namespace Component\Remote\BurzeDzisNet;
 
 /**
  * Storm represents information about registered lightnings with a specified radius of monitoring
