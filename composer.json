@@ -1,6 +1,6 @@
 {
-  "name": "krzysiekpiasecki/burzedzisnet",
-  "description": "burze.dzis.net api client",
+  "name": "component/burzedzisnet",
+  "description": "Notification on weather hazards such as: lightnings, tornadoes, strong winds, heavy precipitation and low and high air temperatures.",
   "keywords": ["storm", "weather", "alert", "api", "soap", "web service"],
   "minimum-stability": "stable",
   "license": "MIT",
@@ -16,11 +16,9 @@
   "require-dev": {
     "phpunit/phpunit": "5.*",
     "phpunit/phpunit-story": "*",
-    "phploc/phploc": "*",
     "fabpot/php-cs-fixer": "*",
-    "krzysiekpiasecki/diagnostics": "*"
   },
   "autoload": {
-    "psr-4": {"KrzysiekPiasecki\\": "src/KrzysiekPiasecki"}
+    "psr-4": {"Component\\": "src/Component"}
   }
 }
