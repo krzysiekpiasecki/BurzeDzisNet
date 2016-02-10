@@ -22,9 +22,9 @@
     timeoutForMediumTests="10"
     timeoutForLargeTests="60"
     verbose="false"
-    bootstrap="tests/bootstrap.php">
+    bootstrap="bootstrap.php.dist">
     <testsuites>
-        <testsuite name="krzysiekpiasecki/burzedzisnet">
+        <testsuite name="component/burzedzisnet">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
