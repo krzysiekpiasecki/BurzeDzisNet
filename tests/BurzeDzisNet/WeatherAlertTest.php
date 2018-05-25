@@ -111,7 +111,7 @@ class WeatherAlertTest extends TestCase
             $alert->toArray()
         );
         $alert2 = new WeatherAlert();
-        $this->assertSame([], $alert2->toArray());
+        $this->assertEquals([], $alert2->toArray());
     }
 
     /**
