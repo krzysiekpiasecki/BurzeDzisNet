@@ -5,29 +5,27 @@
  * that was distributed with this source code.
  */
 
-declare (
-    strict_types = 1
-);
+declare(strict_types=1);
 
-namespace Component\Remote\BurzeDzisNet;
+namespace BurzeDzisNet;
 
 /**
  * Point represents the coordinates (DMS) for the specified locality according to the list of village
- * on the website
+ * on the website.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 interface PointInterface
 {
     /**
-     * Get x
+     * Get x.
      *
      * @return float coordinate x
      */
     public function x(): float;
 
     /**
-     * Get y
+     * Get y.
      *
      * @return float coordinate y
      */

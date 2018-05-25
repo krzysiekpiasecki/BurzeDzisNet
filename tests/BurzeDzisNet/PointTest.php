@@ -5,21 +5,22 @@
  * that was distributed with this source code.
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
-namespace Component\Remote\BurzeDzisNet;
+namespace BurzeDzisNet;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * {@see Point} test.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
+ * @coversNothing
  */
-class PointTest extends PHPUnit_Framework_TestCase
+class PointTest extends TestCase
 {
     /**
-     * @covers Component\Remote\BurzeDzisNet\Point::x
+     * @covers \Component\Remote\BurzeDzisNet\Point::x
      */
     public function testX()
     {
@@ -28,7 +29,7 @@ class PointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Point::y
+     * @covers \Component\Remote\BurzeDzisNet\Point::y
      */
     public function testY()
     {
@@ -37,7 +38,7 @@ class PointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Point::__construct
+     * @covers \Component\Remote\BurzeDzisNet\Point::__construct
      */
     public function test__construct()
     {
@@ -47,7 +48,7 @@ class PointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Point::equals
+     * @covers \Component\Remote\BurzeDzisNet\Point::equals
      */
     public function testEquals()
     {

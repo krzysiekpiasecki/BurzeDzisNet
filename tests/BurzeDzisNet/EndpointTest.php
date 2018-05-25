@@ -5,30 +5,31 @@
  * that was distributed with this source code.
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
-namespace Component\Remote\BurzeDzisNet;
+namespace BurzeDzisNet;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * {@see Endpoint} test.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
+ * @coversNothing
  */
-class EndpointTest extends PHPUnit_Framework_TestCase
+class EndpointTest extends TestCase
 {
     /**
-     * @covers Component\Remote\BurzeDzisNet\apiKey::apikey
+     * @covers \Component\Remote\BurzeDzisNet\apiKey::apikey
      */
-    public function testapiKey()
+    public function testTestapiKey()
     {
         $endpoint = new Endpoint('MyApiKey');
         $this->assertSame('MyApiKey', $endpoint->apiKey());
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Endpoint::wsdl
+     * @covers \Component\Remote\BurzeDzisNet\Endpoint::wsdl
      */
     public function testWsdl()
     {
@@ -37,18 +38,18 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Endpoint::options
+     * @covers \Component\Remote\BurzeDzisNet\Endpoint::options
      */
     public function testOptions()
     {
         $endpoint = new Endpoint('MyApiKey');
-        $this->assertEquals([], $endpoint->options());
+        $this->assertSame([], $endpoint->options());
         $endpoint2 = new Endpoint('MyApiKey', ['option' => true]);
-        $this->assertEquals(['option' => true], $endpoint2->options());
+        $this->assertSame(['option' => true], $endpoint2->options());
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Endpoint::client
+     * @covers \Component\Remote\BurzeDzisNet\Endpoint::client
      */
     public function testClient()
     {
@@ -60,13 +61,13 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Endpoint::client
-     *
-     * @expectedException \SoapFault
+     * @covers \Component\Remote\BurzeDzisNet\Endpoint::client
      */
     public function testClientInvalidWSDL()
     {
-        $endpoint = $this->getMockBuilder("Component\Remote\BurzeDzisNet\Endpoint")
+        $this->expectException(\SoapFault::class);
+
+        $endpoint = $this->getMockBuilder('BurzeDzisNet\\Endpoint')
             ->disableOriginalConstructor()
             ->setMethods(['wsdl', 'options'])
             ->getMock();
@@ -76,7 +77,7 @@ class EndpointTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\Endpoint::__construct
+     * @covers \Component\Remote\BurzeDzisNet\Endpoint::__construct
      */
     public function test__construct()
     {

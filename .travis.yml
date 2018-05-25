@@ -19,7 +19,7 @@ before_script:
 
 script:
   - ./vendor/bin/php-cs-fixer fix --verbose
-  - ./vendor/bin/phpunit
+  - ./vendor/bin/phpunit --config phpunit.xml.dist
 
 after_success:
 after_failure:

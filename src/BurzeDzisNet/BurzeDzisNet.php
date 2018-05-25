@@ -5,35 +5,33 @@
  * that was distributed with this source code.
  */
 
-declare (
-    strict_types = 1
-);
+declare(strict_types=1);
 
-namespace Component\Remote\BurzeDzisNet;
+namespace BurzeDzisNet;
 
 /**
- * BurzeDzisNetInterface represents remote client
+ * BurzeDzisNetInterface represents remote client.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class BurzeDzisNet implements BurzeDzisNetInterface
 {
     /**
-     * Soap client
+     * Soap client.
      *
      * @var \SoapClient Soap client
      */
-    private $client = null;
+    private $client;
 
     /**
-     * API key
+     * API key.
      *
      * @var string API key
      */
-    private $apiKey = null;
+    private $apiKey;
 
     /**
-     * Remote client
+     * Remote client.
      *
      * @param EndpointInterface $endpoint entry point to burze.dzis.net
      */
@@ -44,11 +42,13 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     }
 
     /**
-     * Indicates whether given API key is valid
+     * Indicates whether given API key is valid.
      *
      * @param string $apiKey API key
-     * @return bool true if API key is valid; otherwise false
+     *
      * @throws \SoapFault soap error
+     *
+     * @return bool true if API key is valid; otherwise false
      */
     public function verifyApiKey(string $apiKey): bool
     {
@@ -56,18 +56,22 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     }
 
     /**
-     * Get Point representing location coordinates
+     * Get Point representing location coordinates.
      *
      * If no location returns Point with coordinates [0,0].
      *
      * @see Point
+     *
      * @param string $name location name
-     * @return Point location coordinates
+     *
      * @throws \SoapFault soap error
+     *
+     * @return Point location coordinates
      */
     public function locate(string $name): Point
     {
         $dto = $this->client->miejscowosc($name, $this->apiKey);
+
         return new Point(
             $dto->x,
             $dto->y
@@ -75,13 +79,16 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     }
 
     /**
-     * Get information about storm for the given locality and monitoring radius
+     * Get information about storm for the given locality and monitoring radius.
      *
      * @see Storm
+     *
      * @param Point $point  monitored location
      * @param int   $radius radius of monitoring
-     * @return Storm information about registered lightnings and more
+     *
      * @throws \SoapFault soap error
+     *
+     * @return Storm information about registered lightnings and more
      */
     public function getStorm(Point $point, int $radius = 25): Storm
     {
@@ -91,6 +98,7 @@ class BurzeDzisNet implements BurzeDzisNetInterface
             $radius,
             $this->apiKey
         );
+
         return new Storm(
             $dto->liczba,
             $dto->odleglosc,
@@ -101,10 +109,12 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     }
 
     /**
-     * Get set of weather alerts for the given Point
+     * Get set of weather alerts for the given Point.
      *
      * <strong>Only Polish area</strong>
+     *
      * @param Point $point location coordinates
+     *
      * @return WeatherAlert set of weather alerts
      */
     public function getWeatherAlert(Point $point): WeatherAlert
@@ -114,6 +124,7 @@ class BurzeDzisNet implements BurzeDzisNetInterface
             $point->x(),
             $this->apiKey
         );
+
         return (new WeatherAlert())
             ->withAlert(
                 'frost',

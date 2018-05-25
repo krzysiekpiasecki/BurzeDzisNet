@@ -5,21 +5,22 @@
  * that was distributed with this source code.
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
-namespace Component\Remote\BurzeDzisNet;
+namespace BurzeDzisNet;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * {@see WeatherAlert} test.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
+ * @coversNothing
  */
-class WeatherAlertTest extends PHPUnit_Framework_TestCase
+class WeatherAlertTest extends TestCase
 {
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::__construct
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::__construct
      */
     public function test__construct()
     {
@@ -34,32 +35,30 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
      */
     public function testWithAlert()
     {
         $alert = (new WeatherAlert())
             ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'));
         $this->assertEquals($alert->getAlert('storm'), new Alert(1, '2015-02-12', '2015-02-13'));
-        $alert2 = (new WeatherAlert())
-            ->withAlert('wind', new Alert(2, '2015-02-12', '2015-02-13'));
-        $this->assertNotSame($alert, $alert2);
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
-     * @expectedException \LogicException
-     * @expectedExceptionMessage Alert storm exists
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
      */
     public function testWithAlertOutOfBoundsException()
     {
+        $this->expectException(\LogicException::class);
+        $this->expectExceptionMessage('Alert storm exists');
+
         (new WeatherAlert())
             ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'))
             ->withAlert('storm', new Alert(3, '2015-04-12', '2015-04-12'));
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
      */
     public function testGetAlert()
     {
@@ -69,19 +68,20 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
-     * @expectedException \OutOfBoundsException
-     * @expectedExceptionMessage There is no such an alert like 'Storm'
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
      */
     public function testGetAlertOutOfBoundsException()
     {
+        $this->expectException(\OutOfBoundsException::class);
+        $this->expectExceptionMessage('There is no such an alert like \'Storm\'');
+
         $alert = (new WeatherAlert())
             ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'));
         $alert->getAlert('Storm');
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::getIterator
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::getIterator
      */
     public function testGetIterator()
     {
@@ -92,13 +92,14 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
         foreach ($weatherAlert as $name => $alert) {
             $iteration[$name] = $alert;
         }
-        $this->assertEquals(['storm' => new Alert(1, '2015-02-12', '2015-02-13'), 'wind' => new Alert(2, '2015-02-12', '2015-02-13')],
+        $this->assertEquals(
+            ['storm' => new Alert(1, '2015-02-12', '2015-02-13'), 'wind' => new Alert(2, '2015-02-12', '2015-02-13')],
             $iteration
         );
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::toArray
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::toArray
      */
     public function testToArray()
     {
@@ -110,11 +111,11 @@ class WeatherAlertTest extends PHPUnit_Framework_TestCase
             $alert->toArray()
         );
         $alert2 = new WeatherAlert();
-        $this->assertEquals([], $alert2->toArray());
+        $this->assertSame([], $alert2->toArray());
     }
 
     /**
-     * @covers Component\Remote\BurzeDzisNet\WeatherAlert::hasAlert
+     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::hasAlert
      */
     public function testHasAlert()
     {

@@ -5,24 +5,22 @@
  * that was distributed with this source code.
  */
 
-declare (
-    strict_types = 1
-);
+declare(strict_types=1);
 
-namespace Component\Remote\BurzeDzisNet;
+namespace BurzeDzisNet;
 
 use SoapClient;
 use SoapFault;
 
 /**
- * Endpoint interface is the entry point end a burze.dzis.net service
+ * Endpoint interface is the entry point end a burze.dzis.net service.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Endpoint implements EndpointInterface
 {
     /**
-     * URI of WSDL file
+     * URI of WSDL file.
      *
      * @var string URI of WSDL file
      */
@@ -36,7 +34,7 @@ class Endpoint implements EndpointInterface
     private $apiKey;
 
     /**
-     * Custom options
+     * Custom options.
      *
      * @var array custom options
      */
@@ -57,12 +55,14 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * Get Soap client in WSDL mode
+     * Get Soap client in WSDL mode.
      *
      * @see __construct() Customizing client with option parameter
      * @see {@link \SoapClient http://php.net/manual/en/class.soapclient.php} SoapClient
-     * @return SoapClient SoapClient in WSDL mode
+     *
      * @throws SoapFault if the WSDL URI cannot be loaded or parsed
+     *
+     * @return SoapClient SoapClient in WSDL mode
      */
     public function client(): SoapClient
     {
@@ -70,7 +70,7 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * Get URI of WSDL file
+     * Get URI of WSDL file.
      *
      * @return string URI of WSDL file
      */
@@ -80,7 +80,7 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * Get API key
+     * Get API key.
      *
      * @return string API key
      */
@@ -90,7 +90,7 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * Get options
+     * Get options.
      *
      * @return array endpoint options
      */
