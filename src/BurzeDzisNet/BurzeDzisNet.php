@@ -14,7 +14,7 @@ namespace BurzeDzisNet;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class BurzeDzisNet implements BurzeDzisNetInterface
+class BurzeDzisNet
 {
     /**
      * Soap client.
@@ -33,9 +33,11 @@ class BurzeDzisNet implements BurzeDzisNetInterface
     /**
      * Remote client.
      *
-     * @param EndpointInterface $endpoint entry point to burze.dzis.net
+     * @param Endpoint $endpoint entry point to burze.dzis.net
+     *
+     * @throws \SoapFault
      */
-    public function __construct(EndpointInterface $endpoint)
+    public function __construct(Endpoint $endpoint)
     {
         $this->client = $endpoint->client();
         $this->apiKey = $endpoint->apiKey();

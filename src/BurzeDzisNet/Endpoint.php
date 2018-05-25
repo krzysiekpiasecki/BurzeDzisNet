@@ -17,7 +17,7 @@ use SoapFault;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Endpoint implements EndpointInterface
+class Endpoint
 {
     /**
      * URI of WSDL file.

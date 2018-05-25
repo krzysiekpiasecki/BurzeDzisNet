@@ -15,7 +15,7 @@ namespace BurzeDzisNet;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Point implements PointInterface
+class Point
 {
     /**
      * Coordinate x.
@@ -70,7 +70,7 @@ class Point implements PointInterface
      *
      * @return bool true if this Point is the equal to some other Point; false otherwise
      */
-    public function equals(PointInterface $point): bool
+    public function equals(self $point): bool
     {
         return ($this->x() === $point->x()) && ($this->y() === $point->y());
     }

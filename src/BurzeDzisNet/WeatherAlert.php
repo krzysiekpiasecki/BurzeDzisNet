@@ -19,7 +19,7 @@ use OutOfBoundsException;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class WeatherAlert implements IteratorAggregate, WeatherAlertInterface
+class WeatherAlert implements IteratorAggregate
 {
     /**
      * Alerts.

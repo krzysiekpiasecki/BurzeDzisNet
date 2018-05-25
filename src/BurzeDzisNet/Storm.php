@@ -22,7 +22,7 @@ namespace BurzeDzisNet;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Storm implements StormInterface
+class Storm
 {
     /**
      * The number of cloud-end-ground lightning in specified radius for a specified location.

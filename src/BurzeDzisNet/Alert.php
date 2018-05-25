@@ -18,7 +18,7 @@ namespace BurzeDzisNet;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class Alert implements AlertInterface
+class Alert
 {
     /**
      * Alert level.
