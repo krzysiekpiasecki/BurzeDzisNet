@@ -17,7 +17,8 @@
     "build": ["composer fix", "composer test", "composer doc"]
   },
   "require": {
-    "php": ">=7"
+    "php": ">=7",
+    "ext-soap": "*"
   },
   "require-dev": {
     "sami/sami": "^4.0",
