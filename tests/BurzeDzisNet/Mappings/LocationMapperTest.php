@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 class LocationMapperTest extends TestCase
 {
     /**
-     * @covers ::mapToLocation()
+     * @covers ::mapToLocation
      */
     public function testMapToLocation()
     {

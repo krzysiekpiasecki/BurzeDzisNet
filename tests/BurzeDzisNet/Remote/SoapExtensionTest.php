@@ -141,7 +141,7 @@ class SoapExtensionTest extends TestCase
                 $this->isNull()
             );
 
-        $soapExtMock->locationList('Wro', 'PL');
+        $soapExtMock->locationsList('Wro', 'PL');
     }
 
     /**

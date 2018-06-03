@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace BurzeDzisNet;
 
+use BurzeDzisNet\Mappings\LocationListMapper;
 use BurzeDzisNet\Mappings\LocationMapper;
 use BurzeDzisNet\Mappings\StormMapper;
 use BurzeDzisNet\Mappings\WeatherAlertMapper;
@@ -50,5 +51,15 @@ class BurzeDzisNetFacade
                     $location->x()
                 )
             );
+    }
+
+    public function getLocationNames(string $name, $country): array
+    {
+        return (new LocationListMapper())->mapToLocationList(
+            $this->soap->locationsList(
+                $name,
+                $country
+            )
+        );
     }
 }

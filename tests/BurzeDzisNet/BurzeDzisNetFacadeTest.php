@@ -120,6 +120,40 @@ class BurzeDzisNetFacadeTest extends TestCase
         $this->markTestSkipped('Not implemented yet');
     }
 
+    /**
+     * @covers ::getLocationNames
+     */
+    public function testGetLocationNames()
+    {
+        $soapMock = $this->createMock(SoapExtension::class);
+        $soapMock->method('locationsList')->willReturn(
+            '["Wro",["Wróbel (woj. Warmińsko-Mazurskie)", "Wróble-Arciszewo", "Wróblew", "Wróblik Szlachecki", "Wróblin", "Wróblowice (woj. Dolnośląskie)", "Wróblowice (woj. Małopolskie)", "Wróblówka", "Wrocanka (pow. Jasielski)", "Wrocanka (pow. Krośnieński)", "Wroceń", "Wrociszew", "Wrociszów", "Wrocki", "Wrocław", "Wrocław Fabryczna", "Wrocław Krzyki", "Wrocław Psie Pole", "Wrocław Śródmieście", "Wrocław Stare Miasto", "Wronczyn (gm. Stęszew)", "Wroniawy (woj. Łódzkie)", "Wroniawy (woj. Wielkopolskie)", "Wronie", "Wronin (woj. Małopolskie)", "Wronin (woj. Opolskie)", "Wroniniec", "Wronki", "Wronów (woj. Świętokrzyskie)", "Wronowice (woj. Lubelskie)", "Wronowice (woj. Łódzkie)", "Wronowice (woj. Małopolskie)", "Wronowy", "Wrotków"]]'
+        );
+
+        $bdn = $this->createFacadeInjectMock($soapMock);
+        $this->assertSame(
+            json_decode('["Wróbel (woj. Warmińsko-Mazurskie)", "Wróble-Arciszewo", "Wróblew", "Wróblik Szlachecki", "Wróblin", "Wróblowice (woj. Dolnośląskie)", "Wróblowice (woj. Małopolskie)", "Wróblówka", "Wrocanka (pow. Jasielski)", "Wrocanka (pow. Krośnieński)", "Wroceń", "Wrociszew", "Wrociszów", "Wrocki", "Wrocław", "Wrocław Fabryczna", "Wrocław Krzyki", "Wrocław Psie Pole", "Wrocław Śródmieście", "Wrocław Stare Miasto", "Wronczyn (gm. Stęszew)", "Wroniawy (woj. Łódzkie)", "Wroniawy (woj. Wielkopolskie)", "Wronie", "Wronin (woj. Małopolskie)", "Wronin (woj. Opolskie)", "Wroniniec", "Wronki", "Wronów (woj. Świętokrzyskie)", "Wronowice (woj. Lubelskie)", "Wronowice (woj. Łódzkie)", "Wronowice (woj. Małopolskie)", "Wronowy", "Wrotków"]'),
+            $bdn->getLocationNames('Wro', 'PL'),
+            'Expected that both location list are the same'
+        );
+    }
+
+    /**
+     * @covers ::getLocationNames
+     */
+    public function testGetLocationNamesEmpty()
+    {
+        $soapMock = $this->createMock(SoapExtension::class);
+        $soapMock->method('locationsList')->willReturn('["",[]]');
+
+        $bdn = $this->createFacadeInjectMock($soapMock);
+        $this->assertSame(
+            [],
+            $bdn->getLocationNames('Wr', 'PL'),
+            'Expected that both location list are empty'
+        );
+    }
+
     private function createFacadeInjectMock(SoapExtension $soapMock): BurzeDzisNetFacade
     {
         $bdn = new BurzeDzisNetFacade('91F034E2F66C560D7CA0A7DA957939FD');

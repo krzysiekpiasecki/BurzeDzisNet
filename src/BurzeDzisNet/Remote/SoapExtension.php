@@ -62,7 +62,7 @@ class SoapExtension extends \SoapClient
         );
     }
 
-    public function locationList(string $name, string $country): string
+    public function locationsList(string $name, string $country): string
     {
         return $this->__soapCall(
             'miejscowosci_lista',
