@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace BurzeDzisNet;
 
+use BurzeDzisNet\Remote\SoapExtension;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
 /**
- * Test for {@see BurzeDzisNetSoapExtension}.
- *
  * @coversDefaultClass \BurzeDzisNet\SoapExtension
  */
 class SoapExtensionTest extends TestCase

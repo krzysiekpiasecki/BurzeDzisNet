@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BurzeDzisNet;
+namespace BurzeDzisNet\Remote;
 
 class SoapExtension extends \SoapClient
 {

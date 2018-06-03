@@ -1,13 +1,8 @@
 <?php
 
-/*
- * For the full copyright and license information, please view the LICENSE file
- * that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace BurzeDzisNet;
+namespace BurzeDzisNet\Model;
 
 /**
  * Weather alert.
@@ -15,8 +10,6 @@ namespace BurzeDzisNet;
  * <strong>Only the Polish area</strong>
  *
  * @see https://burze.dzis.net/?page=severe_weather_alert_map_poland Alert scale
- *
- * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Alert
 {
@@ -53,6 +46,16 @@ class Alert
         $this->level = $level;
         $this->start = $start;
         $this->end = $end;
+    }
+
+    public static function emptyAlert(): self
+    {
+        static $alert = null;
+        if (null === $alert) {
+            $alert = new self(0, '', '');
+        }
+
+        return $alert;
     }
 
     /**

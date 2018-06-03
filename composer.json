@@ -23,7 +23,8 @@
   "require-dev": {
     "sami/sami": "^4.0",
     "phpunit/phpunit": "^7.1",
-    "friendsofphp/php-cs-fixer": "^2.11"
+    "friendsofphp/php-cs-fixer": "^2.11",
+    "phploc/phploc": "^4.0"
   },
   "autoload": {
     "psr-4": {

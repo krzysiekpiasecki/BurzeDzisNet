@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>BurzeDzisNet\Alert | BurzeDzisNet API</title>
+    <title>BurzeDzisNet\Model\Location | BurzeDzisNet API</title>
 
-            <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/sami.css">
-        <script src="../js/jquery-1.11.1.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/typeahead.min.js"></script>
-        <script src="../sami.js"></script>
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -19,14 +19,14 @@
     
     </head>
 
-    <body id="class" data-name="class:BurzeDzisNet_Alert" data-root-path="../">
+    <body id="class" data-name="class:BurzeDzisNet_Model_Location" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
                 <script>
             $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
         </script>
-        <form id="search-form" action="../search.html" method="GET">
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -48,16 +48,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.html">BurzeDzisNet API</a>
+                <a class="navbar-brand" href="../../index.html">BurzeDzisNet API</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
-                    <li><a href="../classes.html">Classes</a></li>
-                                            <li><a href="../namespaces.html">Namespaces</a></li>
-                                        <li><a href="../interfaces.html">Interfaces</a></li>
-                    <li><a href="../traits.html">Traits</a></li>
-                    <li><a href="../doc-index.html">Index</a></li>
-                    <li><a href="../search.html">Search</a></li>
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
                 </ul>
             </div>
         </div>
@@ -66,27 +66,28 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>Alert</li>
+                        <li><a href="../../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li><a href="../../BurzeDzisNet/Model.html">Model</a></li><li class="backslash">\</li><li>Location</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Alert
+            Location
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Alert</strong>
+    <strong>Location</strong>
 </p>
 
         
     
 
             <div class="description">
-            <p>Weather alert.</p>            <p><strong>Only the Polish area</strong></p>                    </div>
+            <p>Location represents the coordinates (DMS) for the specified locality according to the list of village
+on the website.</p>                                </div>
     
     
     
@@ -99,39 +100,39 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(int $level, string $start, string $end)
+                    <a href="#method___construct">__construct</a>(float $y, float $x)
         
-                                            <p>Weather alert.</p>                </div>
+                                            <p>New Location representing the coordinates (DMS) for the specified locality.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    int
+                    float
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_level">level</a>()
+                    <a href="#method_x">x</a>()
         
-                                            <p>Get alert level.</p>                </div>
+                                            <p>Get Coordinate-X.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    float
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_startDate">startDate</a>()
+                    <a href="#method_y">y</a>()
         
-                                            <p>Get start day.</p>                </div>
+                                            <p>Get Coordinate-Y.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    bool
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_endDate">endDate</a>()
+                    <a href="#method_equals">equals</a>(<a href="../../BurzeDzisNet/Model/Location.html"><abbr title="BurzeDzisNet\Model\Location">Location</abbr></a> $location)
         
-                                            <p>Get end day.</p>                </div>
+                                            <p>Indicates whether some other Location is equal to this one.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -142,9 +143,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 51</div>
+        <div class="location">at         line 33</div>
         <code>                    
-    <strong>__construct</strong>(int $level, string $start, string $end)
+    <strong>__construct</strong>(float $y, float $x)
         </code>
     </h3>
     <div class="details">
@@ -152,25 +153,20 @@
     
 
                     <div class="method-description">
-                                    <p>Weather alert.</p>                                                </div>
+                                    <p>New Location representing the coordinates (DMS) for the specified locality.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>int</td>
-                <td>$level</td>
-                <td>alert level</td>
+                <td>float</td>
+                <td>$y</td>
+                <td>Coordinate-Y</td>
             </tr>
                     <tr>
-                <td>string</td>
-                <td>$start</td>
-                <td>start day</td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$end</td>
-                <td>end day</td>
+                <td>float</td>
+                <td>$x</td>
+                <td>Coordinate-X</td>
             </tr>
             </table>
 
@@ -182,10 +178,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_level">
-        <div class="location">at         line 65</div>
-        <code>                    int
-    <strong>level</strong>()
+                    <h3 id="method_x">
+        <div class="location">at         line 44</div>
+        <code>                    float
+    <strong>x</strong>()
         </code>
     </h3>
     <div class="details">
@@ -193,86 +189,85 @@
     
 
                     <div class="method-description">
-                                    <p>Get alert level.</p>                                                </div>
+                                    <p>Get Coordinate-X.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>int</td>
-            <td>alert level</td>
+            <td>float</td>
+            <td>Coordinate-X</td>
         </tr>
     </table>
 
             
             
-                            <h4>See also</h4>
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_y">
+        <div class="location">at         line 54</div>
+        <code>                    float
+    <strong>y</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get Coordinate-Y.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td>Coordinate-Y</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_equals">
+        <div class="location">at         line 66</div>
+        <code>                    bool
+    <strong>equals</strong>(<a href="../../BurzeDzisNet/Model/Location.html"><abbr title="BurzeDzisNet\Model\Location">Location</abbr></a> $location)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Indicates whether some other Location is equal to this one.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>
-                                            <a href="https://burze.dzis.net/?page=mapa_ostrzezen">https://burze.dzis.net/?page=mapa_ostrzezen</a>
-                                    </td>
-                <td>Alert scale</td>
+                <td><a href="../../BurzeDzisNet/Model/Location.html"><abbr title="BurzeDzisNet\Model\Location">Location</abbr></a></td>
+                <td>$location</td>
+                <td>Other Location</td>
             </tr>
             </table>
 
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_startDate">
-        <div class="location">at         line 75</div>
-        <code>                    string
-    <strong>startDate</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get start day.</p>                                                </div>
-                <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
-            <td>start day</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_endDate">
-        <div class="location">at         line 85</div>
-        <code>                    string
-    <strong>endDate</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get end day.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>end day</td>
+            <td>bool</td>
+            <td>True if this Location is the equal to some other Location; false otherwise</td>
         </tr>
     </table>
 

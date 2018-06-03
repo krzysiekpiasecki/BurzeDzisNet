@@ -1,13 +1,8 @@
 <?php
 
-/*
- * For the full copyright and license information, please view the LICENSE file
- * that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace BurzeDzisNet;
+namespace BurzeDzisNet\Model;
 
 /**
  * Storm represents information about registered lightnings with a specified radius of monitoring
@@ -19,8 +14,6 @@ namespace BurzeDzisNet;
  * - direction (direction to the nearest lightning [E, E, N, NW, W, SW, S, SE])
  * - period (number of minutes of time period containing the data [10, 15, 20 minutes])
  * - radius (radius covered by Point in km)
- *
- * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Storm
 {
@@ -53,28 +46,19 @@ class Storm
     private $period;
 
     /**
-     * The radius covered by specified location.
-     *
-     * @var int radius covered by specified location
-     */
-    private $radius;
-
-    /**
      * New Storm.
      *
      * @param int    $lightnings number of cloud-end-ground lightning in specified radius for a selected location
      * @param float  $distance   distance (km) to the nearest registered lightning
      * @param string $direction  direction to the nearest lightning (E, E, N, NW, W, SW, S, SE)
      * @param int    $period     number of minutes of time containing the data (10, 15, 20 minutes)
-     * @param int    $radius     radius covered by the location
      */
-    public function __construct(int $lightnings, float $distance, string $direction, int $period, int $radius)
+    public function __construct(int $lightnings, float $distance, string $direction, int $period)
     {
         $this->lightnings = $lightnings;
         $this->distance = $distance;
         $this->direction = $direction;
         $this->period = $period;
-        $this->radius = $radius;
     }
 
     /**
@@ -115,15 +99,5 @@ class Storm
     public function period(): int
     {
         return $this->period;
-    }
-
-    /**
-     * Get radius covered by specified location.
-     *
-     * @return int radius covered by location
-     */
-    public function radius(): int
-    {
-        return $this->radius;
     }
 }
