@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>BurzeDzisNet\Endpoint | BurzeDzisNet API</title>
+    <title>BurzeDzisNet\SoapExtension | BurzeDzisNet API</title>
 
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:BurzeDzisNet_Endpoint" data-root-path="../">
+    <body id="class" data-name="class:BurzeDzisNet_SoapExtension" data-root-path="../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,27 +66,25 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>Endpoint</li>
+                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>SoapExtension</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Endpoint
+            SoapExtension
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Endpoint</strong>
+    <strong>SoapExtension</strong>        extends SoapClient
 </p>
 
         
     
 
-            <div class="description">
-            <p>Endpoint interface is the entry point end a burze.dzis.net service.</p>                                </div>
     
     
     
@@ -99,49 +97,65 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $apiKey, array $options = [])
+                    <a href="#method___construct">__construct</a>(string $apiKey)
         
-                                            <p>Constructor.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    SoapClient
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_client">client</a>()
+                    <a href="#method_keyApi">keyApi</a>()
         
-                                            <p>Get Soap client in WSDL mode.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_wsdl">wsdl</a>()
+                    <a href="#method_location">location</a>(string $name)
         
-                                            <p>Get URI of WSDL file.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_apiKey">apiKey</a>()
+                    <a href="#method_weatherWarnings">weatherWarnings</a>(float $y, float $x)
         
-                                            <p>Get API key.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_options">options</a>()
+                    <a href="#method_findStorm">findStorm</a>(float $y, float $x, int $r)
         
-                                            <p>Get options.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_locationList">locationList</a>(string $name, string $country)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -152,17 +166,15 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 51</div>
+        <div class="location">at         line 11</div>
         <code>                    
-    <strong>__construct</strong>(string $apiKey, array $options = [])
+    <strong>__construct</strong>(string $apiKey)
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Constructor.</p>                    <p>Custom options will be used as an argument when calling {see client} method</p>                            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -170,12 +182,7 @@
                     <tr>
                 <td>string</td>
                 <td>$apiKey</td>
-                <td>API key</td>
-            </tr>
-                    <tr>
-                <td>array</td>
-                <td>$options</td>
-                <td>custom soap options</td>
+                <td></td>
             </tr>
             </table>
 
@@ -187,85 +194,81 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_client">
-        <div class="location">at         line 67</div>
-        <code>                    SoapClient
-    <strong>client</strong>()
+                    <h3 id="method_keyApi">
+        <div class="location">at         line 19</div>
+        <code>                    
+    <strong>keyApi</strong>()
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Get Soap client in WSDL mode.</p>                                                </div>
                 <div class="tags">
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>SoapClient</td>
-            <td>SoapClient in WSDL mode</td>
-        </tr>
-    </table>
-
             
-                            <h4>Exceptions</h4>
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_location">
+        <div class="location">at         line 29</div>
+        <code>                    
+    <strong>location</strong>(string $name)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>SoapFault</td>
-                <td>if the WSDL URI cannot be loaded or parsed</td>
+                <td>string</td>
+                <td>$name</td>
+                <td></td>
             </tr>
             </table>
 
             
-                            <h4>See also</h4>
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_weatherWarnings">
+        <div class="location">at         line 40</div>
+        <code>                    
+    <strong>weatherWarnings</strong>(float $y, float $x)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>
-                                            <abbr title="BurzeDzisNet\__construct()">__construct()</abbr>
-                                    </td>
-                <td>Customizing client with option parameter</td>
+                <td>float</td>
+                <td>$y</td>
+                <td></td>
             </tr>
                     <tr>
-                <td>
-                                            <abbr title="BurzeDzisNet\{@link">{@link</abbr>
-                                    </td>
-                <td>\SoapClient http://php.net/manual/en/class.soapclient.php} SoapClient</td>
+                <td>float</td>
+                <td>$x</td>
+                <td></td>
             </tr>
             </table>
 
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_wsdl">
-        <div class="location">at         line 77</div>
-        <code>                    string
-    <strong>wsdl</strong>()
-        </code>
-    </h3>
-    <div class="details">
             
-    
-
-                    <div class="method-description">
-                                    <p>Get URI of WSDL file.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>URI of WSDL file</td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -273,29 +276,38 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_apiKey">
-        <div class="location">at         line 87</div>
-        <code>                    string
-    <strong>apiKey</strong>()
+                    <h3 id="method_findStorm">
+        <div class="location">at         line 52</div>
+        <code>                    
+    <strong>findStorm</strong>(float $y, float $x, int $r)
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Get API key.</p>                                                </div>
                 <div class="tags">
-            
-                            <h4>Return Value</h4>
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>API key</td>
-        </tr>
-    </table>
+                    <tr>
+                <td>float</td>
+                <td>$y</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>float</td>
+                <td>$x</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$r</td>
+                <td></td>
+            </tr>
+            </table>
 
+            
             
             
                     </div>
@@ -303,29 +315,33 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_options">
-        <div class="location">at         line 97</div>
-        <code>                    array
-    <strong>options</strong>()
+                    <h3 id="method_locationList">
+        <div class="location">at         line 65</div>
+        <code>                    
+    <strong>locationList</strong>(string $name, string $country)
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Get options.</p>                                                </div>
                 <div class="tags">
-            
-                            <h4>Return Value</h4>
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
-        <tr>
-            <td>array</td>
-            <td>endpoint options</td>
-        </tr>
-    </table>
+                    <tr>
+                <td>string</td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$country</td>
+                <td></td>
+            </tr>
+            </table>
 
+            
             
             
                     </div>

@@ -1,10 +1,5 @@
 <?php
 
-/*
- * For the full copyright and license information, please view the LICENSE file
- * that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace BurzeDzisNet;
@@ -12,15 +7,41 @@ namespace BurzeDzisNet;
 use PHPUnit\Framework\TestCase;
 
 /**
- * {@see Alert} test.
- *
- * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
- * @coversNothing
+ * @covers \BurzeDzisNet\Alert
  */
 class AlertTest extends TestCase
 {
     /**
-     * @covers \Component\Remote\BurzeDzisNet\Alert::startDate
+     * @covers ::emptyAlert
+     */
+    public function testEmptyAlert()
+    {
+        $alert = Alert::emptyAlert();
+        $this->assertSame(
+            0,
+            $alert->level(),
+            'Expected that the level of empty Alert will be 0'
+        );
+        $this->assertSame(
+            '',
+            $alert->startDate(),
+            "Expected that the start date of empty Alert will be ''"
+        );
+        $this->assertSame(
+            '',
+            $alert->endDate(),
+            "Expected that the end date of empty Alert will be ''"
+        );
+        $alert2 = Alert::emptyAlert();
+        $this->assertSame(
+            $alert,
+            $alert2,
+            'expected thatt emptyAlert will always return the same instance'
+        );
+    }
+
+    /**
+     * @covers ::startDate
      */
     public function testStartDate()
     {
@@ -29,7 +50,7 @@ class AlertTest extends TestCase
     }
 
     /**
-     * @covers \Component\Remote\BurzeDzisNet\Alert::endDate
+     * @covers ::endDate
      */
     public function testEndDate()
     {
@@ -38,7 +59,7 @@ class AlertTest extends TestCase
     }
 
     /**
-     * @covers \Component\Remote\BurzeDzisNet\Alert::level
+     * @covers ::level
      */
     public function testLevel()
     {
@@ -47,7 +68,7 @@ class AlertTest extends TestCase
     }
 
     /**
-     * @covers \Component\Remote\BurzeDzisNet\Alert::__construct
+     * @covers ::__construct
      */
     public function test__construct()
     {

@@ -79,15 +79,12 @@
     </div>
 
     <p>    class
-    <strong>WeatherAlert</strong>        implements
-        <a target="_blank" href="http://php.net/IteratorAggregate">IteratorAggregate</a>
+    <strong>WeatherAlert</strong>
 </p>
 
         
     
 
-            <div class="description">
-            <p>WeatherAlert represents set of alerts.</p>                                </div>
     
     
     
@@ -100,59 +97,87 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../BurzeDzisNet/WeatherAlert.html"><abbr title="BurzeDzisNet\WeatherAlert">WeatherAlert</abbr></a> $alert = null)
+                    <a href="#method___construct">__construct</a>(array $alerts = [])
         
-                                            <p>WeatherAlert.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../BurzeDzisNet/WeatherAlert.html"><abbr title="BurzeDzisNet\WeatherAlert">WeatherAlert</abbr></a>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_withAlert">withAlert</a>(string $name, <a href="../BurzeDzisNet/Alert.html"><abbr title="BurzeDzisNet\Alert">Alert</abbr></a> $alert)
+                    <a href="#method_frost">frost</a>()
         
-                                            <p>Get WeatherAlert containing new alert.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../BurzeDzisNet/Alert.html"><abbr title="BurzeDzisNet\Alert">Alert</abbr></a>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getAlert">getAlert</a>(string $name)
+                    <a href="#method_wind">wind</a>()
         
-                                            <p>Get alert by name.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a target="_blank" href="http://php.net/ArrayIterator">ArrayIterator</a>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getIterator">getIterator</a>()
+                    <a href="#method_heat">heat</a>()
         
-                                            <p>Iterates over alerts.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    array
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_toArray">toArray</a>()
+                    <a href="#method_precipitation">precipitation</a>()
         
-                                            <p>Get all alerts.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    bool
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_hasAlert">hasAlert</a>(string $name)
+                    <a href="#method_storm">storm</a>()
         
-                                            <p>Check if specified alert exists.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_tornado">tornado</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_warning">warning</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -163,162 +188,27 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 43</div>
+        <div class="location">at         line 16</div>
         <code>                    
-    <strong>__construct</strong>(<a href="../BurzeDzisNet/WeatherAlert.html"><abbr title="BurzeDzisNet\WeatherAlert">WeatherAlert</abbr></a> $alert = null)
+    <strong>__construct</strong>(array $alerts = [])
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>WeatherAlert.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../BurzeDzisNet/WeatherAlert.html"><abbr title="BurzeDzisNet\WeatherAlert">WeatherAlert</abbr></a></td>
-                <td>$alert</td>
-                <td>set of alerts</td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_withAlert">
-        <div class="location">at         line 58</div>
-        <code>                    <a href="../BurzeDzisNet/WeatherAlert.html"><abbr title="BurzeDzisNet\WeatherAlert">WeatherAlert</abbr></a>
-    <strong>withAlert</strong>(string $name, <a href="../BurzeDzisNet/Alert.html"><abbr title="BurzeDzisNet\Alert">Alert</abbr></a> $alert)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get WeatherAlert containing new alert.</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$name</td>
-                <td>alert name</td>
-            </tr>
-                    <tr>
-                <td><a href="../BurzeDzisNet/Alert.html"><abbr title="BurzeDzisNet\Alert">Alert</abbr></a></td>
-                <td>$alert</td>
+                <td>array</td>
+                <td>$alerts</td>
                 <td></td>
             </tr>
             </table>
 
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../BurzeDzisNet/WeatherAlert.html"><abbr title="BurzeDzisNet\WeatherAlert">WeatherAlert</abbr></a></td>
-            <td>new instance of WeatherAlert containing specified alert</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a target="_blank" href="http://php.net/LogicException">LogicException</a></td>
-                <td>Alert exists</td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getAlert">
-        <div class="location">at         line 79</div>
-        <code>                    <a href="../BurzeDzisNet/Alert.html"><abbr title="BurzeDzisNet\Alert">Alert</abbr></a>
-    <strong>getAlert</strong>(string $name)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get alert by name.</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$name</td>
-                <td>alert name</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../BurzeDzisNet/Alert.html"><abbr title="BurzeDzisNet\Alert">Alert</abbr></a></td>
-            <td>alert</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="BurzeDzisNet\OutOfBoundException">OutOfBoundException</abbr></td>
-                <td>there is no such an alert</td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getIterator">
-        <div class="location">at         line 98</div>
-        <code>                    <a target="_blank" href="http://php.net/ArrayIterator">ArrayIterator</a>
-    <strong>getIterator</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Iterates over alerts.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a target="_blank" href="http://php.net/ArrayIterator">ArrayIterator</a></td>
-            <td>alert iterator</td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -326,29 +216,18 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_toArray">
-        <div class="location">at         line 108</div>
-        <code>                    array
-    <strong>toArray</strong>()
+                    <h3 id="method_frost">
+        <div class="location">at         line 26</div>
+        <code>                    
+    <strong>frost</strong>()
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Get all alerts.</p>                                                </div>
                 <div class="tags">
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>array</td>
-            <td>all alerts</td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -356,39 +235,113 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_hasAlert">
-        <div class="location">at         line 129</div>
-        <code>                    bool
-    <strong>hasAlert</strong>(string $name)
+                    <h3 id="method_wind">
+        <div class="location">at         line 31</div>
+        <code>                    
+    <strong>wind</strong>()
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Check if specified alert exists.</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$name</td>
-                <td>string alert name</td>
-            </tr>
-            </table>
-
             
-                            <h4>Return Value</h4>
+            
+            
+                    </div>
+    </div>
 
-                    <table class="table table-condensed">
-        <tr>
-            <td>bool</td>
-            <td>if specified alert exists return true; otherwise false</td>
-        </tr>
-    </table>
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_heat">
+        <div class="location">at         line 36</div>
+        <code>                    
+    <strong>heat</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
 
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_precipitation">
+        <div class="location">at         line 41</div>
+        <code>                    
+    <strong>precipitation</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_storm">
+        <div class="location">at         line 46</div>
+        <code>                    
+    <strong>storm</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_tornado">
+        <div class="location">at         line 51</div>
+        <code>                    
+    <strong>tornado</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_warning">
+        <div class="location">at         line 56</div>
+        <code>                    
+    <strong>warning</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
             
             
                     </div>

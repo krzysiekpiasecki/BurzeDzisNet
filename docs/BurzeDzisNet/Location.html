@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>BurzeDzisNet\Point | BurzeDzisNet API</title>
+    <title>BurzeDzisNet\Location | BurzeDzisNet API</title>
 
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:BurzeDzisNet_Point" data-root-path="../">
+    <body id="class" data-name="class:BurzeDzisNet_Location" data-root-path="../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,27 +66,27 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>Point</li>
+                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>Location</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Point
+            Location
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Point</strong>
+    <strong>Location</strong>
 </p>
 
         
     
 
             <div class="description">
-            <p>Point represents the coordinates (DMS) for the specified locality according to the list of village
+            <p>Location represents the coordinates (DMS) for the specified locality according to the list of village
 on the website.</p>                                </div>
     
     
@@ -100,9 +100,9 @@ on the website.</p>                                </div>
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(float $x, float $y)
+                    <a href="#method___construct">__construct</a>(float $y, float $x)
         
-                                            <p>Point.</p>                </div>
+                                            <p>New Location representing the coordinates (DMS) for the specified locality.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -112,7 +112,7 @@ on the website.</p>                                </div>
                 <div class="col-md-8 type">
                     <a href="#method_x">x</a>()
         
-                                            <p>Get x.</p>                </div>
+                                            <p>Get Coordinate-X.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -122,7 +122,7 @@ on the website.</p>                                </div>
                 <div class="col-md-8 type">
                     <a href="#method_y">y</a>()
         
-                                            <p>Get y.</p>                </div>
+                                            <p>Get Coordinate-Y.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -130,9 +130,9 @@ on the website.</p>                                </div>
                     bool
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_equals">equals</a>(<a href="../BurzeDzisNet/Point.html"><abbr title="BurzeDzisNet\Point">Point</abbr></a> $point)
+                    <a href="#method_equals">equals</a>(<a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a> $location)
         
-                                            <p>Indicates whether some other Point is equal to this one.</p>                </div>
+                                            <p>Indicates whether some other Location is equal to this one.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -143,9 +143,9 @@ on the website.</p>                                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 40</div>
+        <div class="location">at         line 33</div>
         <code>                    
-    <strong>__construct</strong>(float $x, float $y)
+    <strong>__construct</strong>(float $y, float $x)
         </code>
     </h3>
     <div class="details">
@@ -153,20 +153,20 @@ on the website.</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Point.</p>                                                </div>
+                                    <p>New Location representing the coordinates (DMS) for the specified locality.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>float</td>
-                <td>$x</td>
-                <td>coordinate x</td>
+                <td>$y</td>
+                <td>Coordinate-Y</td>
             </tr>
                     <tr>
                 <td>float</td>
-                <td>$y</td>
-                <td>coordinate y</td>
+                <td>$x</td>
+                <td>Coordinate-X</td>
             </tr>
             </table>
 
@@ -179,7 +179,7 @@ on the website.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_x">
-        <div class="location">at         line 51</div>
+        <div class="location">at         line 44</div>
         <code>                    float
     <strong>x</strong>()
         </code>
@@ -189,7 +189,7 @@ on the website.</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Get x.</p>                                                </div>
+                                    <p>Get Coordinate-X.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -197,7 +197,7 @@ on the website.</p>                                </div>
                     <table class="table table-condensed">
         <tr>
             <td>float</td>
-            <td>coordinate x</td>
+            <td>Coordinate-X</td>
         </tr>
     </table>
 
@@ -209,7 +209,7 @@ on the website.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_y">
-        <div class="location">at         line 61</div>
+        <div class="location">at         line 54</div>
         <code>                    float
     <strong>y</strong>()
         </code>
@@ -219,7 +219,7 @@ on the website.</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Get y.</p>                                                </div>
+                                    <p>Get Coordinate-Y.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -227,7 +227,7 @@ on the website.</p>                                </div>
                     <table class="table table-condensed">
         <tr>
             <td>float</td>
-            <td>coordinate y</td>
+            <td>Coordinate-Y</td>
         </tr>
     </table>
 
@@ -239,9 +239,9 @@ on the website.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_equals">
-        <div class="location">at         line 73</div>
+        <div class="location">at         line 66</div>
         <code>                    bool
-    <strong>equals</strong>(<a href="../BurzeDzisNet/Point.html"><abbr title="BurzeDzisNet\Point">Point</abbr></a> $point)
+    <strong>equals</strong>(<a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a> $location)
         </code>
     </h3>
     <div class="details">
@@ -249,15 +249,15 @@ on the website.</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Indicates whether some other Point is equal to this one.</p>                                                </div>
+                                    <p>Indicates whether some other Location is equal to this one.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../BurzeDzisNet/Point.html"><abbr title="BurzeDzisNet\Point">Point</abbr></a></td>
-                <td>$point</td>
-                <td>other Point</td>
+                <td><a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a></td>
+                <td>$location</td>
+                <td>Other Location</td>
             </tr>
             </table>
 
@@ -267,7 +267,7 @@ on the website.</p>                                </div>
                     <table class="table table-condensed">
         <tr>
             <td>bool</td>
-            <td>true if this Point is the equal to some other Point; false otherwise</td>
+            <td>True if this Location is the equal to some other Location; false otherwise</td>
         </tr>
     </table>
 

@@ -1,10 +1,5 @@
 <?php
 
-/*
- * For the full copyright and license information, please view the LICENSE file
- * that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace BurzeDzisNet;
@@ -12,119 +7,99 @@ namespace BurzeDzisNet;
 use PHPUnit\Framework\TestCase;
 
 /**
- * {@see WeatherAlert} test.
- *
- * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
- * @coversNothing
+ * @covers \BurzeDzisNet\WeatherAlert
  */
 class WeatherAlertTest extends TestCase
 {
     /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::__construct
+     * @covers ::__construct
+     * @covers ::wind
+     * @covers ::heat
+     * @covers ::precipitation
+     * @covers ::tornado
+     * @covers ::storm
+     * @covers ::frost
      */
-    public function test__construct()
+    public function testConstructor()
     {
-        $alert = (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'))
-            ->withAlert('wind', new Alert(2, '2015-02-12', '2015-02-13'));
-        $alert2 = new WeatherAlert($alert);
-        $this->assertTrue($alert2->hasAlert('storm'));
-        $this->assertEquals(new Alert(1, '2015-02-12', '2015-02-13'), $alert2->getAlert('storm'));
-        $this->assertTrue($alert2->hasAlert('wind'));
-        $this->assertEquals(new Alert(2, '2015-02-12', '2015-02-13'), $alert2->getAlert('wind'));
-    }
+        $wind = new Alert(1, '2015-02-12', '2015-02-18');
+        $heat = new Alert(1, '2015-02-12', '2015-02-18');
+        $precipitation = new Alert(1, '2015-02-12', '2015-02-18');
+        $tornado = new Alert(1, '2015-02-12', '2015-02-18');
+        $storm = new Alert(1, '2015-02-12', '2015-02-18');
+        $frost = new Alert(1, '2015-02-12', '2015-02-18');
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
-     */
-    public function testWithAlert()
-    {
-        $alert = (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'));
-        $this->assertEquals($alert->getAlert('storm'), new Alert(1, '2015-02-12', '2015-02-13'));
-    }
+        $weatherAlert = new WeatherAlert(
+            [
+                'wind' => $wind,
+                'heat' => $heat,
+                'precipitation' => $precipitation,
+                'tornado' => $tornado,
+                'storm' => $storm,
+                'frost' => $frost,
+            ]
+        );
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::withAlert
-     */
-    public function testWithAlertOutOfBoundsException()
-    {
-        $this->expectException(\LogicException::class);
-        $this->expectExceptionMessage('Alert storm exists');
+        $this->assertSame(
+            $wind,
+            $weatherAlert->wind(),
+            'Expected wind alert to be the same instance as in constructor'
+        );
 
-        (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'))
-            ->withAlert('storm', new Alert(3, '2015-04-12', '2015-04-12'));
-    }
+        $this->assertSame(
+            $heat,
+            $weatherAlert->heat(),
+            'Expected heat alert to be the same instance as in constructor'
+        );
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
-     */
-    public function testGetAlert()
-    {
-        $alert = (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'));
-        $this->assertEquals($alert->getAlert('storm'), new Alert(1, '2015-02-12', '2015-02-13'));
-    }
+        $this->assertSame(
+            $precipitation,
+            $weatherAlert->precipitation(),
+            'Expected precipitation alert to be the same instance as in constructor'
+        );
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::getAlert
-     */
-    public function testGetAlertOutOfBoundsException()
-    {
-        $this->expectException(\OutOfBoundsException::class);
-        $this->expectExceptionMessage('There is no such an alert like \'Storm\'');
+        $this->assertSame(
+            $tornado,
+            $weatherAlert->tornado(),
+            'Expected tornado alert to be the same instance as in constructor'
+        );
 
-        $alert = (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'));
-        $alert->getAlert('Storm');
-    }
+        $this->assertSame(
+            $storm,
+            $weatherAlert->storm(),
+            'Expected storm alert to be the same instance as in constructor'
+        );
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::getIterator
-     */
-    public function testGetIterator()
-    {
-        $weatherAlert = (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'))
-            ->withAlert('wind', new Alert(2, '2015-02-12', '2015-02-13'));
-        $iteration = [];
-        foreach ($weatherAlert as $name => $alert) {
-            $iteration[$name] = $alert;
-        }
-        $this->assertEquals(
-            ['storm' => new Alert(1, '2015-02-12', '2015-02-13'), 'wind' => new Alert(2, '2015-02-12', '2015-02-13')],
-            $iteration
+        $this->assertSame(
+            $frost,
+            $weatherAlert->frost(),
+            'Expected frost alert to be the same instance as in constructor'
         );
     }
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::toArray
-     */
-    public function testToArray()
+    public function testWarning()
     {
-        $alert = (new WeatherAlert())
-            ->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'))
-            ->withAlert('wind', new Alert(2, '2015-02-12', '2015-02-13'));
-        $this->assertEquals(
-            ['storm' => new Alert(1, '2015-02-12', '2015-02-13'), 'wind' => new Alert(2, '2015-02-12', '2015-02-13')],
-            $alert->toArray()
+        $wind = new Alert(1, '2015-02-12', '2015-02-18');
+
+        $weatherAlert = new WeatherAlert(
+            [
+                'wind' => $wind,
+            ]
         );
-        $alert2 = new WeatherAlert();
-        $this->assertEquals([], $alert2->toArray());
+
+        $this->assertTrue(
+            $weatherAlert->warning(),
+            'Expected warning when alert has been set'
+        );
     }
 
-    /**
-     * @covers \Component\Remote\BurzeDzisNet\WeatherAlert::hasAlert
-     */
-    public function testHasAlert()
+    public function testNoWarning()
     {
-        $alert = new WeatherAlert();
-        $this->assertFalse($alert->hasAlert('storm'));
-        $alert2 = $alert->withAlert('storm', new Alert(1, '2015-02-12', '2015-02-13'));
-        $this->assertTrue($alert2->hasAlert('storm'));
-        $alert3 = $alert2->withAlert('wind', new Alert(2, '2015-02-12', '2015-02-13'));
-        $this->assertTrue($alert3->hasAlert('wind'));
-        $this->assertTrue($alert3->hasAlert('storm'));
+        $weatherAlert = new WeatherAlert();
+
+        $this->assertFalse(
+            $weatherAlert->warning(),
+            'Expected no warning when empty alert'
+        );
     }
 }

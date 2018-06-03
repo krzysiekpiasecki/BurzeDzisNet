@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>BurzeDzisNet\Alert | BurzeDzisNet API</title>
+    <title>BurzeDzisNet\BurzeDzisNetFacade | BurzeDzisNet API</title>
 
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:BurzeDzisNet_Alert" data-root-path="../">
+    <body id="class" data-name="class:BurzeDzisNet_BurzeDzisNetFacade" data-root-path="../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,27 +66,25 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>Alert</li>
+                        <li><a href="../BurzeDzisNet.html">BurzeDzisNet</a></li><li class="backslash">\</li><li>BurzeDzisNetFacade</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Alert
+            BurzeDzisNetFacade
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Alert</strong>
+    <strong>BurzeDzisNetFacade</strong>
 </p>
 
         
     
 
-            <div class="description">
-            <p>Weather alert.</p>            <p><strong>Only the Polish area</strong></p>                    </div>
     
     
     
@@ -99,17 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(int $level, string $start, string $end)
-        
-                                            <p>Weather alert.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    static&nbsp;
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_emptyAlert">emptyAlert</a>()
+                    <a href="#method___construct">__construct</a>(string $apiKey)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -117,32 +105,35 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    int
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_level">level</a>()
+                    <a href="#method_getLocation">getLocation</a>(string $name)
         
-                                            <p>Get alert level.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_startDate">startDate</a>()
+                    <a href="#method_getStorm">getStorm</a>(<a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a> $location, int $distance = 25)
         
-                                            <p>Get start day.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_endDate">endDate</a>()
+                    <a href="#method_getWeatherAlert">getWeatherAlert</a>(<a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a> $location)
         
-                                            <p>Get end day.</p>                </div>
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -153,35 +144,86 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 44</div>
+        <div class="location">at         line 11</div>
         <code>                    
-    <strong>__construct</strong>(int $level, string $start, string $end)
+    <strong>__construct</strong>(string $apiKey)
         </code>
     </h3>
     <div class="details">
             
     
 
-                    <div class="method-description">
-                                    <p>Weather alert.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
+                <td>string</td>
+                <td>$apiKey</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLocation">
+        <div class="location">at         line 16</div>
+        <code>                    
+    <strong>getLocation</strong>(string $name)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStorm">
+        <div class="location">at         line 24</div>
+        <code>                    
+    <strong>getStorm</strong>(<a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a> $location, int $distance = 25)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a></td>
+                <td>$location</td>
+                <td></td>
+            </tr>
+                    <tr>
                 <td>int</td>
-                <td>$level</td>
-                <td>alert level</td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$start</td>
-                <td>start day</td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$end</td>
-                <td>end day</td>
+                <td>$distance</td>
+                <td></td>
             </tr>
             </table>
 
@@ -193,10 +235,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_emptyAlert">
-        <div class="location">at         line 51</div>
-        <code>        static            
-    <strong>emptyAlert</strong>()
+                    <h3 id="method_getWeatherAlert">
+        <div class="location">at         line 36</div>
+        <code>                    
+    <strong>getWeatherAlert</strong>(<a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a> $location)
         </code>
     </h3>
     <div class="details">
@@ -204,108 +246,17 @@
     
 
                 <div class="tags">
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_level">
-        <div class="location">at         line 68</div>
-        <code>                    int
-    <strong>level</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get alert level.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>int</td>
-            <td>alert level</td>
-        </tr>
-    </table>
-
-            
-            
-                            <h4>See also</h4>
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>
-                                            <a href="https://burze.dzis.net/?page=mapa_ostrzezen">https://burze.dzis.net/?page=mapa_ostrzezen</a>
-                                    </td>
-                <td>Alert scale</td>
+                <td><a href="../BurzeDzisNet/Location.html"><abbr title="BurzeDzisNet\Location">Location</abbr></a></td>
+                <td>$location</td>
+                <td></td>
             </tr>
             </table>
 
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_startDate">
-        <div class="location">at         line 78</div>
-        <code>                    string
-    <strong>startDate</strong>()
-        </code>
-    </h3>
-    <div class="details">
             
-    
-
-                    <div class="method-description">
-                                    <p>Get start day.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>start day</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_endDate">
-        <div class="location">at         line 88</div>
-        <code>                    string
-    <strong>endDate</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Get end day.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td>end day</td>
-        </tr>
-    </table>
-
             
             
                     </div>
