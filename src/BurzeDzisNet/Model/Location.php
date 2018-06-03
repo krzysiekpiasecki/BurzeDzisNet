@@ -63,7 +63,7 @@ class Location
      *
      * @return bool True if this Location is the equal to some other Location; false otherwise
      */
-    public function equals(Location $location): bool
+    public function equals(self $location): bool
     {
         return $this->x === $location->x() && $this->y === $location->y();
     }
